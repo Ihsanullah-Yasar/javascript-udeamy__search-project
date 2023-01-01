@@ -42,7 +42,7 @@ class AppController{
         document.querySelector('.nav-btn').style.display='block';
         document.querySelector('.close-btn').style.display='none';
      }
-
+    // all events are setupped in this function
     setEventLestener(){
         // mythis variable is declared to access insert course method from deep scope
         var mythis=this;
@@ -68,6 +68,7 @@ class AppController{
                 document.querySelector('.nav-btn').style.display='block';
             }
         });
+        // event for search input when someone press enter key
         document.addEventListener('keypress', function(event){
             
             if(event.keyCode ===13 || event.which ===13){
@@ -81,7 +82,7 @@ class AppController{
                 
 
                 for(let i=0;i<courseArray.length;i++){
-                    if(searchPattern.test(courseArray[i].title)){
+                    if(searchPattern.test(courseArray[i].title) || searchPattern.test(courseArray[i].description)){
                         searchResult.push(courseArray[i]);
                     }
                 }
@@ -336,7 +337,7 @@ class courses{
         let course10=new courses('courseCoverImg/javascript.PNG','Modern javascript from the begining','learn javascript, make interactive and dynamic webiste.','Abbacki',4.5,17,'All level','English','notknown','10,6,2022','programming','90',136,6097);
         let course11=new courses('courseCoverImg/javascript1.PNG','The complete javascript course','learn javascript form intial state to master level.','Jonas schemedtmann',4.6,26,'All level','Persion','notknown','15,9,2022','programming','70',87,753297);
         let course12=new courses('courseCoverImg/javascriptPersion.PNG','The complete javascript Pashtoo course','learn javascript with ease and enjoy making application and websites.','ahmad wiyar',4.2,44,'All level','Pashtoo','notknown','10,11,2022','programming','10',49,335512);
-        let course13=new courses('courseCoverImg/typescript.PNG','The complete typescript diamond course','learn typescript language and enjoy the cool feature of javascript.','mikewell schorlet',4.2,23,'expert','English','notknown','21,6,2022','programming','15',30,335512);
+        let course13=new courses('courseCoverImg/typescript.PNG','The complete typescript diamond course','learn typescript(javascript) language and enjoy the cool feature of javascript.','mikewell schorlet',4.2,23,'expert','English','notknown','21,6,2022','programming','15',30,335512);
         let course14=new courses('courseCoverImg/LMSproject.PNG','Libray management system in java','build a library management system with full features.','mikewell schorlet',4.2,30,'expert','English','notknown','21,12,2022','programming','29',70,335512);
         let course15=new courses('courseCoverImg/ReactJS.PNG','React (javascript) full course','learn react framework and build beautiful app and websites.','jose waker',4.4,73,'expert','English','notknown','6,12,2022','programming','29',120,1112355);
 
