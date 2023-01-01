@@ -1,0 +1,270 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 19px;
+}
+h1{
+    font-size: 150%;
+} 
+ /* navbar css code */
+.navbar{
+    border-top: 8px solid rgb(121, 35, 201);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 80px;
+    box-shadow: 2px 0 5px  black;
+    background-color: rgb(241, 240, 240);
+
+}
+.showHide{
+    display: inline-block;
+}
+.nav-btn{
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 95%;
+    padding: 5px;
+    vertical-align: center;
+}
+.close-btn{
+    display: none;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    left: 95%;
+}
+#searchInp{
+    font-size: 80%;
+    padding: 10px;
+    height: 45px;
+    width: 500px;
+    border-radius: 30px;
+    border: 0.5px solid #000;
+    outline: none;
+    transition: background-color .5s;
+}
+#searchInp:focus{
+    background-color: #eeeeee;
+}
+.navbar li{
+    list-style-type: none;
+}
+.navbar li a{
+    padding: 5px;
+    text-decoration: none;
+    font-size: 90%;
+    color: #0f0f0f;
+    height: 30px;
+    width: 80px;
+    
+
+}
+
+#logoName{
+    
+    /* color: rgb(8, 8, 8); */
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.authentications{
+    display: flex;
+    width: 20%;
+    justify-content: space-evenly;
+    align-content: center;
+}
+.login-btn{
+    padding: 5px 10px;
+    border: 1px solid rgb(10, 10, 10);
+}
+
+#signup-btn{
+    color: white;
+    padding: 5px 10px;
+    background-color: rgb(15, 15, 15);
+}
+
+.localize-btn{
+    padding: 5px 10px;
+    border: 1px solid rgb(10, 10, 10);
+}
+
+ /* main section css code  */
+
+main{
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.purple{
+    color: rgb(121, 35, 201);
+}
+.big{
+    font-size: 100%;
+}
+.title{
+    padding: 10px;
+}
+.course-info{
+    padding: 10px;
+    font-size: 120%;
+}
+.suggest{
+    padding: 5px 10px 10px 10px;
+}
+.bold{
+    font-weight: bold;
+}
+
+.filter-sort{
+    margin-top: 10px;
+    padding: 10px;
+    
+}
+
+.filter{
+    height: 60px;
+    padding: 20px 10px 10px 10px;
+    border: 1px solid #181818;
+    display: block;
+    float: left;
+}
+
+.sort{
+    width: 180px;
+    height: 60px;
+    /* padding: 10px; */
+    margin-left: 20px;
+    border: 1px solid #181818;
+    display: block;
+    float: left;
+}
+.sort-by{
+    padding: 5px;
+    font-size: 80%;
+}
+.sort-opt{
+    border: none;
+    width: 90%;
+    font-size: 90%;
+}
+.search-result{
+    display: block;
+    float: right;
+}
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display:none;
+}
+.clearfix{
+    display: table;
+    clear: both;
+}
+
+.flexbox{
+    margin-top: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.col1{
+    width: 23%;
+}
+
+/* course list section  */
+.col2{
+    width: 75%;
+}
+
+.list-items{
+    font-weight: bold;
+    list-style-type: none;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-top: 1px solid rgb(185, 185, 185);
+}
+.options{
+    outline: none;
+    width: 30%;
+    float: right;
+    border: none;
+}
+.courses{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #999999;
+    border-bottom-left-radius: 10px;
+    padding: 10px 0;
+}
+.cover-image{
+    width: 30%;
+}
+.cover-image img{
+    width: 300px;
+    height: 160px;
+}
+.course-details{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 0 0 5px;
+    width: 650px;
+    
+}
+.related-details{
+    width: 85%;
+}
+.price{
+    padding: 10px;
+    float: right;
+}
+.course-price{
+    width: 20%;
+}
+.title{
+    padding: 0;
+    font-size: 100%;
+}
+.para{
+    padding-top: 5px;
+    font-size: 85%;
+    color: #3d3d3d;
+}
+.important{
+    font-size: 85%;
+    text-transform: capitalize;
+    color: #161616;
+    font-weight: bold;
+}
+.course-instructor{
+    padding-top: 5px;
+    font-size: 70%;
+    color: #636363;
+}
+.rated{
+    font-size: 90%;
+    color: #636363;
+}
+.stars{
+    color: rgb(255, 189, 6);
+}
+
+.content-info{
+    font-size: 70%;
+    color: #636363;
+}
+.notMatched{
+    color: #f00;
+    text-align: center;
+}

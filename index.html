@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="query.css">
+    <title>Udemy</title>
+</head>
+<body>
+   <nav>
+    
+    
+       <ul class="navbar">
+           <div><button class="share nav-btn">&thickapprox;</button></div>
+            <div><button class="share close-btn">X</button></div>
+            <li class="showHide"><a id="logoName" href="#">Udemy</a></li>
+            <li class="showHide"><a  href="#">Catagories</a></li>
+            <li class="showHide"><input  id="searchInp" type="search" placeholder="&infintie;&nbsp; Search latest courses">&nbsp;</li>
+            <!-- <li><button>Search</button></li> -->
+            <li class="showHide"><a  href="#">Udemy Bisness</a></li>
+            <li class="showHide"><a  href="#">Teach on Udemy</a></li>
+            <li class="showHide"><a  href="#">&olcir;</a></li>
+            <li>
+                <div  class="authentications">
+                    <li class="showHide"><a class="login-btn" href="#">Login</a></li>
+                    <li class="showHide"><a class="showHide signup-btn" href="#">SignUp</a></li>
+                    <li class="showHide"><a class="showHide localize-btn" href="#">&CirclePlus;</a></li>
+                </div>
+            </li> 
+
+            
+
+       </ul>
+   </nav> 
+   <main>
+       <div class="searchResult">
+            <!-- <h1 class="title">1000 , Result for "Phyton"</h1>
+            <p class="course-info bold">Explore <span class="purple big">Phyton cousrses</span> </p>
+            <p class="suggest bold">student also learn , <span class="purple">Data science, Machine Learning , Flask , Web Scraping , programming fundamental, Data analysis</span></p> -->
+       </div>
+    
+    <div class="filter-sort">
+        <div class="filter bold">&fallingdotseq;&nbsp; Filter <span class="NumOfFilter">1</span></div>
+        <div class="sort bold">
+            <div class="sort-by">Sort by</div>
+            <div class="sort-option">
+                <select class="sort-opt" name="sort-option" id="sort-id">
+                    <option value="relavant">Most relavant</option>
+                    <option value="viewed">Most viewed</option>
+                    <option value="rated">Highest rated</option>
+                    <option value="newest">newest</option>
+                </select>
+            </div>
+        </div>
+        <div class="search-result">Suggested Courses</div>
+    </div><br><br>
+    <div class="flexbox">
+        <div class="col1">
+            <ul>
+                <!-- <li><select name="course-info" id="info">
+                    Ratings<option value="rate">Rating</option>
+                    language<option value="language">Language</option>
+                    <option value="language">Video duration</option>
+                    <option value="features">Features</option>
+                    <option value="Topic">Topic</option>
+                    <option value="level">Topic</option>
+                </select></li> -->
+                <li class="list-items">
+                    <label for="rate">Rate</label>
+                    <select class="rated options" name="rate" id="rate">
+                        <option value=""> </option>
+                        <option value="4.5"><span class="stars">&starf;&starf;&starf;&starf;&star;</span>4.5 & up</option>
+                        <option value="4.0"><span class="stars">&starf;&starf;&starf;&starf;&star;</span>4.0 & up</option>
+                        <option value="3.0"><span class="stars">&starf;&starf;&starf;</span>3.0 & up</option>
+                        <option value="2.0"><span class="stars">&starf;&starf;</span>2.0 & up</option>
+                        
+                    </select>
+                </li>
+                <li class="list-items">
+                    <label for="language">Language</label>
+                    <select class="language options" name="language" id="language">
+                        <option value="*"> </option>
+                        <option value="English">English</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="Urdu">Urdu</option>
+                        <option value="Persion">Persion</option>
+                        <option value="Pashtoo">Pashtoo</option>
+                    </select>
+                </li>
+                <li class="list-items">
+                    <label for="video">video duration</label>
+                    <select class="videoDuration options" name="duration" id="duration">
+                        <option value=""> </option>
+                        <option value="0.5">30 min & less</option>
+                        <option value="1">1 hour & less</option>
+                        <option value="5">5 hour & less</option>
+                        <option value="10">10 hour & less</option>
+                        <option value="20">20 hour & less</option>
+                        <option value="30">30 hour & less</option>
+                        <option value="50">50 hour & less</option>
+                        <option value="90">90 hour & less</option>
+                    </select>
+                </li>
+                <li class="list-items">
+                    <label for="features">Features </label>
+                    <select class="featu options" name="features" id="features">
+                        <option value=""> </option>
+                        <option value="subtitle">subtitle</option>
+                        <option value="quizes">quizes</option>
+                        <option value="coding exercises">coding exercises</option>
+                        <option value="practice tests">practice tests</option>
+                    </select>
+                </li>
+                <li class="list-items">
+                    <label for="features">Topic</label>
+                    <select class="topic options" name="topic" id="topic">
+                        <option value=""> </option>
+                        <option value="programming">programming</option>
+                        <option value="network">network</option>
+                        <option value="database">database</option>
+                        <option value="artificial intellegence">Artificial intellegence</option>
+                        <option value="data science">data science</option>
+                    </select>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="col2">
+            <!-- <div class="courses">
+                <div class="cover-image">
+                    <img src="courseCoverImg\image1.PNG" alt="">
+                </div>
+                <div class="course-details">
+                    <div class="related-details">
+                        <h5 class="title">100 Days of Code: The Complete phyton pro bootcamp for 2023</5>
+                        <p class="para">Master <span class="important">Phyton</span> by building 100 projects in 100 days. learn data science , automation, build websites, games and apps.</p>
+                        <h6 class="course-instructor">Dr. Angela YU</h6>
+                        <h6 class="rated">4.7 <span class="stars">&starf;&starf;&starf;&starf;&star;</span>(161,827)</h6>
+                        <h6 class="content-info">64 total hours - 676 lectures : All levels</h6>
+                    </div>
+                    <div class="course-price">
+                        <h3 class="price">199&dollar;</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="courses">
+                <div class="cover-image">
+                    <img src="courseCoverImg\image2.PNG" alt="">
+                </div>
+                <div class="course-details">
+                    <div class="related-details">
+                        <h5 class="title">100 Days of Code: The Complete phyton pro bootcamp for 2023</5>
+                        <p class="para">Master <span class="important">Phyton</span> by building 100 projects in 100 days. learn data science , automation, build websites, games and apps.</p>
+                        <h6 class="course-instructor">Dr. Angela YU</h6>
+                        <h6 class="rated">4.7 <span class="stars">&starf;&starf;&starf;&starf;&star;</span>(161,827)</h6>
+                        <h6 class="content-info">64 total hours - 676 lectures : All levels</h6>
+                    </div>
+                    <div class="course-price">
+                        <h3 class="price">199&dollar;</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="courses">
+                <div class="cover-image">
+                    <img src="courseCoverImg\image2.PNG" alt="">
+                </div>
+                <div class="course-details">
+                    <div class="related-details">
+                        <h5 class="title">100 Days of Code: The Complete phyton pro bootcamp for 2023</5>
+                        <p class="para">Master <span class="important">Phyton</span> by building 100 projects in 100 days. learn data science , automation, build websites, games and apps.</p>
+                        <h6 class="course-instructor">Dr. Angela YU</h6>
+                        <h6 class="rated">4.7 <span class="stars">&starf;&starf;&starf;&starf;&star;</span>(161,827)</h6>
+                        <h6 class="content-info">64 total hours - 676 lectures : All levels</h6>
+                    </div>
+                    <div class="course-price">
+                        <h3 class="price">199&dollar;</h3>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+   </main>
+   <script src="app.js"></script>
+</body>
+</html>
