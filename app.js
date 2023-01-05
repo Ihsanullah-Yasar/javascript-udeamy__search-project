@@ -130,20 +130,62 @@ class AppController{
             // }// no need for else statement
         });
         // filters event
-        document.querySelector('.rated').addEventListener('change',()=>{
-            this.filterCourses(this.ManuplatedArray,document.querySelector('.rated').value,'rated');
+        document.querySelectorAll('.options').forEach( element=>{
             
-        });
-        document.querySelector('.language').addEventListener('change',()=>{
-            this.filterCourses(this.ManuplatedArray,document.querySelector('.language').value,'language');
-        });
-        document.querySelector('.videoDuration').addEventListener('change',()=>{
-            this.filterCourses(this.ManuplatedArray,parseFloat(document.querySelector('.videoDuration').value),'Duration');
-        });
-        document.querySelector('.topic').addEventListener('change',()=>{
-            this.filterCourses(this.ManuplatedArray,document.querySelector('.topic').value,'topic');
+            element.addEventListener('change',()=>{
+            let className=element.className;
+            className=className.slice(0,className.search(' '));
+            let filteredArray=courses.createCourses();
+            // here we need to execute all if statement so therefore selected if's rather than (if elseif)
+            if(document.querySelector(`.${className}`).value==''){
+                document.querySelector('.NumOfFilter').textContent=parseInt(document.querySelector('.NumOfFilter').textContent.valueOf())-1;
+                let filterValuesObject=this.getAllfiltersValues();
+                if(filterValuesObject.rated!==''){
+                    console.log(document.querySelector(`.${className}`).value);
+                    filteredArray=this.filterCourses(filteredArray,document.querySelector(`.rated`).value,'rated');
+                }
+                if(filterValuesObject.language!==''){
+                    console.log(document.querySelector(`.${className}`).value);
+                    filteredArray=this.filterCourses(filteredArray,document.querySelector(`.language`).value,'language');
+                }
+                if(filterValuesObject.videoDuration!==''){
+                    console.log(className);
+                    console.log(document.querySelector(`.${className}`).value);
+                    filteredArray=this.filterCourses(filteredArray,document.querySelector(`.videoDuration`).value,'videoDuration');
+                }
+                if(filterValuesObject.topic!==''){
+                     filteredArray=this.filterCourses(filteredArray,document.querySelector(`.topic`).value,'topic');
+                }
+                console.log(filteredArray);
+                this.insertcourses(filteredArray);
+            }else{
+                this.filterCourses(this.ManuplatedArray,document.querySelector(`.${className}`).value, className);
+            }
             
+            });
         });
+        // document.querySelector('.rated').addEventListener('change',()=>{
+        //     if(document.querySelector('.rated').value==''){
+        //         let filterObject=this.getAllfiltersValues();
+        //         console.log(filterObject.rated);
+        //         console.log(filterObject.language);
+        //         console.log(filterObject.videoDuration);
+        //         console.log(filterObject.topic);
+        //     }
+        //     this.filterCourses(this.ManuplatedArray,document.querySelector('.rated').value,'rated');
+            
+        // });
+        // document.querySelector('.language').addEventListener('change',()=>{
+        //     this.filterCourses(this.ManuplatedArray,document.querySelector('.language').value,'language');
+        // });
+        // document.querySelector('.videoDuration').addEventListener('change',()=>{
+        //     this.filterCourses(this.ManuplatedArray,parseFloat(document.querySelector('.videoDuration').value),'videoDuration');
+        // });
+        // document.querySelector('.topic').addEventListener('change',()=>{
+        //     this.filterCourses(this.ManuplatedArray,document.querySelector('.topic').value,'topic');
+            
+        // });
+        
         
         
          
@@ -151,17 +193,29 @@ class AppController{
     
     
     }
-    insertcourses(array){ 
-    // check array if there is some courses or not
-    if(array.length==0){
-            let courseElements=document.querySelector('.col2');
-            courseElements.innerHTML='';
-            courseElements.insertAdjacentHTML("beforeend",'<h1 class="notMatched">Course Not found</h1>');
-            document.querySelector('.search-result').innerHTML=' ';
+    getAllfiltersValues(){
+        return {
+            rated: document.querySelector('.rated').value,
+            language: document.querySelector('.language').value,
+            videoDuration: document.querySelector('.videoDuration').value,
+            topic: document.querySelector('.topic').value,
+            allcourses: courses.createCourses()
+        };
+
     }
+    insertcourses(array){ 
+    
     // we should empty the course list container
     let courseElements=document.querySelector('.col2');
     courseElements.innerHTML='';
+
+    // check array if there is some courses or not
+    if(array.length==0){
+            courseElements.insertAdjacentHTML("beforeend",'<h1 class="notMatched">Course Not found</h1>');
+            document.querySelector('.search-result').innerHTML=' ';
+    }
+    
+    
     // Store current manupated array 
     this.ManuplatedArray=array;
     //for loop to iterate through array and set element content
@@ -255,7 +309,15 @@ class AppController{
 
     }
     filterCourses(array,filterValue,option){
+        console.log()
         let filteredArray=new Array();
+        // checking for filter applying and unapplying and change filter number with matched condition
+        if(document.querySelector(`.${option}`).value !=''){
+            document.querySelector('.NumOfFilter').textContent=parseInt(document.querySelector('.NumOfFilter').textContent.valueOf())+1;
+    
+            }else{
+                document.querySelector('.NumOfFilter').textContent=parseInt(document.querySelector('.NumOfFilter').textContent.valueOf())-1;
+            }
         switch(option){
             case 'rated':
             // filter courses by selected number of rated star
@@ -273,8 +335,9 @@ class AppController{
                 }
             }
             break;
-            case 'Duration':
-                
+            case 'videoDuration':
+                console.log('filter value '+filterValue);
+                console.log('filter video Duration');
                 for(let i=0;i<array.length;i++){
                     // console.log(array[i]);
                     // console.log("backend "+typeof array[i].Duration);
@@ -282,6 +345,7 @@ class AppController{
                         filteredArray.push(array[i]);
                     }
                 }
+                console.log(filteredArray);
             break;
             case 'topic':
                 for(let i=0;i<array.length;i++){
@@ -294,12 +358,16 @@ class AppController{
             break;
             
         }
-        document.querySelector('.NumOfFilter').textContent=parseInt(document.querySelector('.NumOfFilter').textContent.valueOf())+1;
+        
         if(filteredArray.length==0){
             filteredArray=courses.createCourses();
             
-        }   
+        }
+
+        this.ManuplatedArray=filteredArray;  
         this.insertcourses(filteredArray)
+        console.log(filteredArray);
+        return filteredArray;
     }
     
     

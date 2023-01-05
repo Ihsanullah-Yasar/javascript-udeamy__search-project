@@ -13,8 +13,8 @@
     
     
        <ul class="navbar">
-           <div><button class="share nav-btn">&thickapprox;</button></div>
-            <div><button class="share close-btn">X</button></div>
+           <div><button class="share nav-btn">&#9776;</button></div>
+            <div><button class="share close-btn">&CircleTimes;</button></div>
             <li class="showHide"><a id="logoName" href="#">Udemy</a></li>
             <li class="showHide"><a  href="#">Catagories</a></li>
             <li class="showHide"><input  id="searchInp" type="search" placeholder="&infintie;&nbsp; Search latest courses">&nbsp;</li>
@@ -42,11 +42,12 @@
        </div>
     
     <div class="filter-sort">
-        <div class="filter bold">&fallingdotseq;&nbsp; Filter <span class="NumOfFilter">1</span></div>
+        <div class="filter bold">&fallingdotseq;&nbsp; Filter <span class="NumOfFilter">0</span></div>
         <div class="sort bold">
             <div class="sort-by">Sort by</div>
             <div class="sort-option">
                 <select class="sort-opt" name="sort-option" id="sort-id">
+                    <option value=""> </option>
                     <option value="relavant">Most relavant</option>
                     <option value="viewed">Most viewed</option>
                     <option value="rated">Highest rated</option>
@@ -81,7 +82,7 @@
                 <li class="list-items">
                     <label for="language">Language</label>
                     <select class="language options" name="language" id="language">
-                        <option value="*"> </option>
+                        <option value=""> </option>
                         <option value="English">English</option>
                         <option value="Arabic">Arabic</option>
                         <option value="Urdu">Urdu</option>

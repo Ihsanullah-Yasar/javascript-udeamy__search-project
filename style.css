@@ -28,15 +28,19 @@ h1{
     position: absolute;
     top: 10px;
     left: 95%;
-    padding: 5px;
-    vertical-align: center;
+    padding: 5px 15px 5px 5px;
+    font-size: 25px;
+    border: none;
+    
 }
 .close-btn{
     display: none;
     padding: 5px;
     position: absolute;
-    top: 10px;
+    top: 13px;
     left: 95%;
+    border: none;
+    font-size: 23px;
 }
 #searchInp{
     font-size: 80%;
